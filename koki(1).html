@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#120b09">
+<title>KOKI | مطعم كوكي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#100907;--card:#1b100d;--card2:#241511;--gold:#e6b24a;--gold2:#ffd36a;--red:#7c2020;--cream:#fff7e8;--muted:#c9b9aa;--line:#3b2821}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0,#351b12 0,#100907 38%,#090605 100%);color:var(--cream);font-family:Cairo,Arial,sans-serif}
+a{text-decoration:none;color:inherit}.wrap{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(10,6,5,.88);backdrop-filter:blur(12px);border-bottom:1px solid #3a251d}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--gold2);font-size:23px}.brand img{width:48px;height:48px;object-fit:contain}.navlinks{display:flex;gap:20px;color:#eadfd3;font-size:14px}.navlinks a:hover{color:var(--gold2)}
+.hero{min-height:500px;display:grid;place-items:center;text-align:center;padding:75px 0 55px;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.48)),url("https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1800&q=85") center/cover}
+.hero .box{max-width:760px;background:rgba(12,7,5,.67);padding:34px 25px;border:1px solid rgba(255,211,106,.25);border-radius:26px;box-shadow:0 20px 70px #0008}.eyebrow{color:var(--gold2);font-weight:800;letter-spacing:1px}.hero h1{font-size:clamp(42px,8vw,78px);margin:5px 0;line-height:1;font-weight:900}.hero p{font-size:18px;color:#f0e5da;margin:15px 0 25px}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:14px;padding:12px 20px;font:800 15px Cairo;cursor:pointer;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#2b1809;box-shadow:0 8px 25px #0004}.btn.alt{background:#241511;color:var(--cream);border:1px solid var(--line);box-shadow:none}
+section{padding:58px 0}.title{text-align:center;margin-bottom:30px}.title h2{font-size:32px;margin:0 0 7px}.title p{margin:0;color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature{background:linear-gradient(145deg,#241511,#150c0a);border:1px solid var(--line);border-radius:20px;padding:20px;text-align:center}.feature b{display:block;color:var(--gold2);font-size:18px;margin-bottom:5px}.feature span{color:var(--muted);font-size:14px}
+.menuTools{position:sticky;top:72px;z-index:20;background:rgba(12,7,5,.93);backdrop-filter:blur(10px);padding:12px 0;border-bottom:1px solid #2e1e18}.tools{display:flex;gap:10px;align-items:center}.search{flex:1;min-width:150px;background:#1a100d;border:1px solid var(--line);border-radius:13px;color:white;padding:12px 14px;font:600 14px Cairo;outline:none}.search:focus{border-color:var(--gold)}.cartBtn{position:relative;white-space:nowrap}.count{position:absolute;top:-8px;left:-8px;background:#d53c2f;color:white;width:23px;height:23px;border-radius:50%;font-size:12px;display:grid;place-items:center}
+.cats{display:flex;gap:9px;overflow:auto;padding:13px 0 3px}.cat{border:1px solid var(--line);background:#1b100d;color:#e9dcd0;border-radius:999px;padding:9px 16px;font:700 13px Cairo;white-space:nowrap;cursor:pointer}.cat.active,.cat:hover{background:var(--gold);color:#241408;border-color:var(--gold)}
+.menuGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.item{background:linear-gradient(150deg,#241511,#160c0a);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 35px #0003}.pic{height:185px;background:#22130f center/cover no-repeat}.itembody{padding:16px;display:flex;flex-direction:column;gap:9px;flex:1}.item h3{margin:0;font-size:18px}.desc{font-size:12px;color:#a99587;min-height:20px}.priceRow{display:flex;gap:7px;flex-wrap:wrap}.size{background:#140b09;border:1px solid #4b3026;color:#eadccf;border-radius:10px;padding:7px 9px;font:700 12px Cairo;cursor:pointer}.size.selected{border-color:var(--gold);background:#3a2613;color:var(--gold2)}.price{color:var(--gold2);font-weight:900}.add{margin-top:auto;width:100%}
+.empty{text-align:center;color:var(--muted);padding:45px;display:none}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}.aboutbox{background:#180e0b;border:1px solid var(--line);border-radius:22px;padding:25px}.aboutbox h3{color:var(--gold2);margin-top:0}.contact{display:grid;grid-template-columns:1fr 1fr;gap:15px}.contactbox{background:#1a0f0c;border:1px solid var(--line);border-radius:20px;padding:24px}.phone{font-size:22px;font-weight:900;color:var(--gold2);display:block;margin:7px 0}
+footer{padding:30px 0;text-align:center;color:#9d8b7d;border-top:1px solid var(--line)}
+.overlay{position:fixed;inset:0;background:#0009;z-index:80;display:none}.overlay.show{display:block}.cart{position:fixed;top:0;right:0;height:100%;width:min(430px,94vw);background:#120a08;z-index:90;transform:translateX(105%);transition:.28s;display:flex;flex-direction:column;border-left:1px solid var(--line);box-shadow:-20px 0 60px #0008}.cart.show{transform:translateX(0)}.cartHead{padding:18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.cartHead h3{margin:0;color:var(--gold2)}.close{background:none;border:0;color:#fff;font-size:25px;cursor:pointer}.cartItems{flex:1;overflow:auto;padding:15px}.cartItem{border:1px solid var(--line);background:#1b100d;border-radius:14px;padding:12px;margin-bottom:10px}.ciTop{display:flex;justify-content:space-between;gap:8px}.ciPrice{color:var(--gold2);font-weight:900}.qty{display:flex;align-items:center;gap:10px;margin-top:8px}.qty button{width:30px;height:30px;border-radius:9px;border:1px solid var(--line);background:#281710;color:white;font-weight:900;cursor:pointer}.cartFoot{padding:15px;border-top:1px solid var(--line)}.total{display:flex;justify-content:space-between;font-size:19px;font-weight:900;margin-bottom:12px}.total span:last-child{color:var(--gold2)}.field{width:100%;background:#1b100d;border:1px solid var(--line);color:white;border-radius:11px;padding:10px;margin:5px 0;font:600 13px Cairo;outline:none}.note{font-size:11px;color:#99877a;margin:6px 0 10px}
+@media(max-width:900px){.menuGrid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}.navlinks{display:none}}
+@media(max-width:600px){.nav{height:62px}.menuTools{top:62px}.tools{flex-wrap:wrap}.search{order:2;flex-basis:100%}.menuGrid{grid-template-columns:1fr}.pic{height:210px}.about,.contact{grid-template-columns:1fr}.hero{min-height:430px}.hero .box{padding:28px 17px}.hero p{font-size:15px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#"><img src="logo-transparent.png" alt="كوكي"><span>KOKI</span></a>
+<nav class="navlinks"><a href="#menu">المنيو</a><a href="#about">عن كوكي</a><a href="#contact">تواصل معنا</a></nav>
+<button class="btn cartBtn" onclick="openCart()">🛒 السلة <span class="count" id="cartCount">0</span></button>
+</div></header>
+
+<section class="hero"><div class="box">
+<div class="eyebrow">KOKI RESTAURANT</div><h1>مطعم كوكي</h1>
+<p>اختار أكلك، ضيفه للسلة، وبعد تأكيد رقم المطعم تقدر تبعت طلبك مباشرة على واتساب.</p>
+<a class="btn" href="#menu">شوف المنيو 🍕</a>
+</div></section>
+
+<section><div class="wrap">
+<div class="features"><div class="feature"><b>🍕 منيو كوكي</b><span>الأقسام مرتبة وسهلة البحث</span></div><div class="feature"><b>🛒 سلة طلبات</b><span>اجمع أكتر من صنف قبل الإرسال</span></div><div class="feature"><b>💬 واتساب</b><span>الطلب بيتجهز في رسالة واحدة</span></div></div>
+</div></section>
+
+<div class="menuTools" id="menu"><div class="wrap">
+<div class="tools"><input id="search" class="search" placeholder="🔎 ابحث عن صنف..." oninput="render()"></div>
+<div class="cats" id="cats"></div>
+</div></div>
+
+<section style="padding-top:28px"><div class="wrap"><p style="text-align:center;color:var(--gold2);margin-bottom:18px">⚠️ نسخة تجريبية: الأصناف والأسعار مؤقتة لحين إدخال منيو كوكي الرسمية.</p><div id="grid" class="menuGrid"></div><div id="empty" class="empty">مفيش أصناف مطابقة للبحث 😅</div></div></section>
+
+<section id="about"><div class="wrap"><div class="title"><h2>عن كوكي</h2><p>طعم تحبه من أول مرة ❤️</p></div><div class="about"><div class="aboutbox"><h3>مطعم كوكي</h3><p>كوكي بيقدملك مجموعة متنوعة من الأكلات والسندوتشات والوجبات. اختار اللي تحبه من المنيو وابعث طلبك بسهولة من الموبايل.</p></div><div class="aboutbox"><h3>اطلب بسهولة</h3><p>اختار الأصناف والكميات، وبعدها اضغط إرسال الطلب. الرسالة هتظهر جاهزة على واتساب بالمجموع والتفاصيل.</p></div></div></div></section>
+
+<section id="contact"><div class="wrap"><div class="title"><h2>تواصل معنا</h2><p>للطلب والاستفسار</p></div><div class="contact">
+<div class="contactbox"><b>📱 واتساب / موبايل</b><p class="phone" style="font-size:17px">سيتم إضافة رقم مطعم كوكي</p><p style="color:var(--muted)">رقم التواصل غير متوفر في الملف المرسل.</p></div>
+<div class="contactbox"><b>📍 مطعم كوكي</b><p>بسيون - الغربية</p><a class="btn" href="#menu">اطلب دلوقتي</a></div>
+</div></div></section>
+
+<footer>© <span id="year"></span> مطعم كوكي — جميع الحقوق محفوظة</footer>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="cart" id="cart">
+<div class="cartHead"><h3>🛒 طلبك</h3><button class="close" onclick="closeCart()">×</button></div>
+<div class="cartItems" id="cartItems"></div>
+<div class="cartFoot">
+<div class="total"><span>الإجمالي</span><span id="total">0 ج.م</span></div>
+<input id="customer" class="field" placeholder="اسمك (اختياري)">
+<input id="address" class="field" placeholder="العنوان (اختياري)">
+<input id="notes" class="field" placeholder="ملاحظات على الطلب (اختياري)">
+<div class="note">سيتم فتح واتساب برسالة الطلب. راجع البيانات قبل الإرسال.</div>
+<button class="btn" style="width:100%" onclick="sendOrder()">إرسال الطلب على واتساب 💬</button>
+</div>
+</aside>
+
+<script>
+const WA="";
+
+/* الأسعار والأصناف التالية تم إدخالها من الصور المرسلة للمنيو.
+   لو فيه سعر/اسم غير واضح في الصورة، سيظل سهل التعديل من هذا الجدول. */
+const menu=[{"c":"البيتزا","n":"بيتزا مارجريتا","s":{"S":90,"M":120,"L":150},"i":"https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=80"},{"c":"البيتزا","n":"بيتزا فراخ","s":{"S":110,"M":145,"L":175},"i":"https://images.unsplash.com/photo-1594007654729-407yddc4f?auto=format&fit=crop&w=900&q=80"},{"c":"البيتزا","n":"بيتزا ميكس جبن","s":{"S":100,"M":135,"L":165},"i":"https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=900&q=80"},{"c":"السندوتشات","n":"برجر كلاسيك","s":{"one":75},"i":"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80"},{"c":"السندوتشات","n":"ساندوتش فراخ","s":{"one":65},"i":"https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80"},{"c":"السندوتشات","n":"زنجر","s":{"one":80},"i":"https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80"},{"c":"الكريب","n":"كريب فراخ","s":{"one":85},"i":"https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=80"},{"c":"الكريب","n":"كريب ميكس جبن","s":{"one":75},"i":"https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=80"},{"c":"المكرونات","n":"مكرونة ألفريدو","s":{"S":65,"L":90},"i":"https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80"},{"c":"المكرونات","n":"مكرونة صوص أحمر","s":{"S":50,"L":75},"i":"https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=80"},{"c":"الوجبات","n":"وجبة فراخ وبطاطس","s":{"one":120},"i":"https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=900&q=80"},{"c":"الإضافات","n":"بطاطس","s":{"one":35},"i":"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80"},{"c":"المشروبات","n":"مشروب غازي","s":{"one":20},"i":"https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=900&q=80"}]
+
+let active="الكل", cart=[];
+const cats=["الكل",...new Set(menu.map(x=>x.c))];
+document.getElementById("cats").innerHTML=cats.map((c,i)=>`<button class="cat ${i===0?'active':''}" onclick="setCat('${c.replace(/'/g,"\\'")}',this)">${c}</button>`).join("");
+
+function setCat(c,b){active=c;document.querySelectorAll(".cat").forEach(x=>x.classList.remove("active"));b.classList.add("active");render()}
+function render(){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ const data=menu.map((x,idx)=>({...x,idx})).filter(x=>(active==="الكل"||x.c===active)&&(!q||x.n.toLowerCase().includes(q)||x.c.toLowerCase().includes(q)));
+ const grid=document.getElementById("grid"),empty=document.getElementById("empty");
+ empty.style.display=data.length?"none":"block";
+ grid.innerHTML=data.map(x=>card(x)).join("");
+}
+function card(x){
+ const keys=Object.keys(x.s);
+ const first=keys[0];
+ const buttons=keys.map(k=>`<button class="size ${k===first?'selected':''}" data-size="${k}" data-size="${k}" onclick="chooseSize(this,'${k}')">${k==="one"?"وجبة":k} ${x.s[k]} <span class="price">ج.م</span></button>`).join("");
+ return `<article class="item" data-id="${x.idx}"><div class="pic" style="background-image:url('${x.i}')"></div><div class="itembody"><h3>${x.n}</h3><div class="desc">${x.d||x.c}</div><div class="priceRow">${buttons}</div><button class="btn add" onclick="add(${x.idx},this)">إضافة للسلة 🛒</button></div></article>`
+}
+function chooseSize(btn,k){btn.parentElement.querySelectorAll(".size").forEach(x=>x.classList.remove("selected"));btn.classList.add("selected");}
+function add(idx,btn){
+ const el=btn.closest(".item"), selected=el.querySelector(".size.selected");
+ const size=selected?selected.dataset.size:"one";
+ const x=menu[idx], price=x.s[size];
+ if(price===undefined){alert("اختار مقاس متاح للصنف");return}
+ const key=idx+"-"+size, found=cart.find(a=>a.key===key);
+ if(found)found.qty++; else cart.push({key,idx,size,price,qty:1});
+ updateCart(); openCart();
+}
+function updateCart(){
+ document.getElementById("cartCount").textContent=cart.reduce((a,b)=>a+b.qty,0);
+ const box=document.getElementById("cartItems");
+ box.innerHTML=cart.length?cart.map((a,i)=>{
+   const x=menu[a.idx], line=typeof a.price==="number"?a.price*a.qty:"يحدد المطعم";
+   return `<div class="cartItem"><div class="ciTop"><b>${x.n} ${a.size!=="one"?"("+a.size+")":""}</b><span class="ciPrice">${line} ${typeof a.price==="number"?"ج.م":""}</span></div><div class="qty"><button onclick="changeQty(${i},-1)">−</button><b>${a.qty}</b><button onclick="changeQty(${i},1)">+</button><button onclick="removeItem(${i})" style="margin-right:auto">حذف</button></div></div>`
+ }).join(""):`<div style="text-align:center;color:#9d8b7d;padding:45px 10px">السلة فاضية<br>ضيف الأصناف اللي عايزها 👇</div>`;
+ const hasCustom=cart.some(a=>typeof a.price!=="number");
+ const total=cart.reduce((a,b)=>typeof b.price==="number"?a+b.price*b.qty:a,0);
+ document.getElementById("total").textContent=hasCustom?"يحدد المطعم":total+" ج.م";
+}
+function changeQty(i,n){cart[i].qty+=n;if(cart[i].qty<=0)cart.splice(i,1);updateCart()}
+function removeItem(i){cart.splice(i,1);updateCart()}
+function openCart(){document.getElementById("cart").classList.add("show");document.getElementById("overlay").classList.add("show");updateCart()}
+function closeCart(){document.getElementById("cart").classList.remove("show");document.getElementById("overlay").classList.remove("show")}
+function sendOrder(){
+ if(!cart.length){alert("ضيف صنف واحد على الأقل للسلة");return}
+ const name=document.getElementById("customer").value.trim(), address=document.getElementById("address").value.trim(), notes=document.getElementById("notes").value.trim();
+ let msg="مرحباً مطعم كوكي 👋%0A%0A*طلب جديد من الموقع*%0A";
+ cart.forEach((a,i)=>{
+   const x=menu[a.idx];
+   const line=typeof a.price==="number"?a.price*a.qty:"يحدد المطعم";
+   msg+=`%0A${i+1}- ${encodeURIComponent(x.n)} ${a.size!=="one"?"("+a.size+")":""} × ${a.qty} = ${line}${typeof a.price==="number"?" ج.م":""}`;
+ });
+ const hasCustom=cart.some(a=>typeof a.price!=="number");
+ const total=cart.reduce((a,b)=>typeof b.price==="number"?a+b.price*b.qty:a,0);
+ msg+=`%0A%0A*الإجمالي: ${hasCustom?"يحدد المطعم":total+" ج.م"}*`;
+ if(name)msg+=`%0Aالاسم: ${encodeURIComponent(name)}`;
+ if(address)msg+=`%0Aالعنوان: ${encodeURIComponent(address)}`;
+ if(notes)msg+=`%0Aملاحظات: ${encodeURIComponent(notes)}`;
+ if(!WA){alert("رقم واتساب مطعم كوكي لم يُضاف بعد. الأصناف والأسعار المعروضة تجريبية وتحتاج تأكيد المطعم.");return}
+ window.open("https://wa.me/"+WA+"?text="+msg,"_blank");
+}
+document.getElementById("year").textContent=new Date().getFullYear();
+render();updateCart();
+</script>
+</body>
+</html>
